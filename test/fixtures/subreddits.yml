@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  link_type: MyString
+  over_18: false
+  reported: false
+  created_by: 
+
+two:
+  name: MyString
+  description: MyText
+  link_type: MyString
+  over_18: false
+  reported: false
+  created_by: 

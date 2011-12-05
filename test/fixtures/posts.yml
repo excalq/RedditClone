@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  type: 
+  url: MyString
+  body: MyText
+  nsfw: false
+  by: 
+  subreddit: 
+
+two:
+  title: MyString
+  type: 
+  url: MyString
+  body: MyText
+  nsfw: false
+  by: 
+  subreddit: 

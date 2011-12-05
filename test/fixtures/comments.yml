@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  by: 
+  post: 
+  body: MyText
+  up_votes: 
+  down_votes: 
+  parent: 
+
+two:
+  by: 
+  post: 
+  body: MyText
+  up_votes: 
+  down_votes: 
+  parent: 

@@ -1,0 +1,17 @@
+- if flash[:alert]
+  #notice
+    = flash[:alert]
+
+%h2 Login
+
+= form_tag do
+  %fieldset
+    %legend Login
+    %div
+      %label Username:
+      =text_field_tag :username, params[:username]
+    %div
+      %label Password:
+      =password_field_tag :password, params[:password]
+    %div
+      =submit_tag "Login"

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  username: MyString
+  password: MyString
+  email: MyString
+  link_karma: 
+  comment_karma: 
+
+two:
+  username: MyString
+  password: MyString
+  email: MyString
+  link_karma: 
+  comment_karma: 

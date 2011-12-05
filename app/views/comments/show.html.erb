@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>By:</b>
+  <%= @comment.by %>
+</p>
+
+<p>
+  <b>Post:</b>
+  <%= @comment.post %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @comment.body %>
+</p>
+
+<p>
+  <b>Up votes:</b>
+  <%= @comment.up_votes %>
+</p>
+
+<p>
+  <b>Down votes:</b>
+  <%= @comment.down_votes %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @comment.parent %>
+</p>
+
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

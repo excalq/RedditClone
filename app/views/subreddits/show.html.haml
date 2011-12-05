@@ -1,0 +1,6 @@
+%h2= @subreddit.name
+%p
+  = @subreddit.description
+%p
+  %strong Created by:
+  = link_to @creator.username, @creator

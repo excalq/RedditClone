@@ -1,0 +1,70 @@
+!!!
+%html
+  %head
+    %title Reddit Clone
+    = stylesheet_link_tag     "application"
+    = javascript_include_tag  "application"
+    = csrf_meta_tags
+    :css
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #top {
+        background-color: #F0F0F0;
+        border-bottom: 1px solid gray;
+        min-height: 20px;
+        max-height: 20px;
+      }
+
+      #head {
+        background-color: #CEE3FB;
+        border-bottom: 1px solid #5F99CF;
+        padding: 8px;
+      }
+
+      #user_bar {
+        background-color: #EFF7FF;
+        position: absolute;
+        right: 0px;
+        top: 21px;
+      }
+
+      #left {
+        border-right: 1px solid black;
+        float: left;
+        padding: 8px;
+        width: 80%;
+      }
+
+      #right {
+        float: right;
+        padding: 8px;
+        width: 16%;
+      }
+
+      .clear {
+        clear: both;
+      }
+  %body
+    #wrap
+      #top
+        =session
+      #head
+        %h1= link_to "Reddit Clone", "/"
+        #user_bar
+          - if session[:user_id]
+            = link_to "Profile", users_path, :id => session[:user_id]
+          - else
+            = link_to "Login", login_path
+            or
+            = link_to "Register", register_path
+      #body
+        #left
+          = yield
+        #right
+          = link_to "Create Subreddit", :controller => "subreddits", :action => "new"
+      .clear
+      #foot
+        %p &copy; Chiggins

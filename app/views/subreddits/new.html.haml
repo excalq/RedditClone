@@ -1,0 +1,20 @@
+%h2 New Subreddit
+/ render 'form'
+-if session[:user_id]
+  = form_for @subreddit do |f|
+    = f.label :name
+    = f.text_field :name
+    %br/
+    = f.label :description
+    %br/
+    = f.text_area :description
+    %br/
+    = f.label :link_type
+    = select("subreddit", "link_type", @link_types)
+    %br/
+    = f.label :over_18
+    = check_box("subreddit", "over_18", {}, "true", "false")
+    %br/
+    = f.submit
+-else
+  %p Hey! You need to be logged in to do that!
