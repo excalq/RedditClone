@@ -13,7 +13,7 @@ class SubredditsController < ApplicationController
   # GET /subreddits/1
   # GET /subreddits/1.json
   def show
-    @subreddit = Subreddit.find(:first, :conditions => ["name = ?", params[:id]])
+    @subreddit = Subreddit.find_by_name(params[:id])
     @creator = User.find(@subreddit.created_by_id)
     respond_to do |format|
       format.html # show.html.erb
@@ -35,7 +35,8 @@ class SubredditsController < ApplicationController
 
   # GET /subreddits/1/edit
   def edit
-    @subreddit = Subreddit.find(params[:id])
+    @subreddit = Subreddit.find_by_name(params[:id])
+    @creator = User.find(@subreddit.created_by_id)
   end
 
   # POST /subreddits
@@ -58,7 +59,7 @@ class SubredditsController < ApplicationController
   # PUT /subreddits/1
   # PUT /subreddits/1.json
   def update
-    @subreddit = Subreddit.find(params[:id])
+    @subreddit = Subreddit.find_by_name(params[:id])
 
     respond_to do |format|
       if @subreddit.update_attributes(params[:subreddit])
