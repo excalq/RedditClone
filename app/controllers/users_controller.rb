@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    params[:password] = Digest::SHA2.hexdigest(params[:password])
+    #params[:password] = Digest::SHA2.hexdigest(params[:password])
     @user = User.new(params[:user])
 
     respond_to do |format|
