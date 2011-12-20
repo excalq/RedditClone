@@ -1,4 +1,9 @@
 class SubredditsController < ApplicationController
+  def initialize
+    super()
+    @link_types = {"link" => "link", "text" => "text", "both" => "both"}
+  end
+
   # GET /subreddits
   # GET /subreddits.json
   def index
@@ -25,7 +30,6 @@ class SubredditsController < ApplicationController
   # GET /subreddits/new.json
   def new
     @subreddit = Subreddit.new
-    @link_types = {"link" => "link", "text" => "text", "both" => "both"}
 
     respond_to do |format|
       format.html # new.html.erb
