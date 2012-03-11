@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111011024028) do
+ActiveRecord::Schema.define(:version => 20111214220828) do
 
   create_table "comments", :force => true do |t|
-    t.integer  "by_id"
-    t.integer  "post_id"
+    t.integer  "by_id",                     :null => false
+    t.integer  "post_id",                   :null => false
     t.text     "body"
-    t.integer  "up_votes"
-    t.integer  "down_votes"
-    t.integer  "parent"
+    t.integer  "up_votes",   :default => 0
+    t.integer  "down_votes", :default => 0
+    t.integer  "parent",     :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,13 +28,13 @@ ActiveRecord::Schema.define(:version => 20111011024028) do
   add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
 
   create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.string   "type"
+    t.string   "title",                           :null => false
+    t.string   "type",                            :null => false
     t.string   "url"
     t.text     "body"
-    t.boolean  "nsfw"
-    t.integer  "by_id"
-    t.integer  "subreddit_id"
+    t.boolean  "nsfw",         :default => false
+    t.integer  "by_id",                           :null => false
+    t.integer  "subreddit_id",                    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,12 +43,12 @@ ActiveRecord::Schema.define(:version => 20111011024028) do
   add_index "posts", ["subreddit_id"], :name => "index_posts_on_subreddit_id"
 
   create_table "subreddits", :force => true do |t|
-    t.string   "name"
+    t.string   "name",                              :null => false
     t.text     "description"
-    t.string   "link_type"
-    t.boolean  "over_18"
-    t.boolean  "reported"
-    t.integer  "created_by_id"
+    t.string   "link_type",     :default => "both"
+    t.boolean  "over_18",       :default => false
+    t.boolean  "reported",      :default => false
+    t.integer  "created_by_id",                     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -56,11 +56,11 @@ ActiveRecord::Schema.define(:version => 20111011024028) do
   add_index "subreddits", ["created_by_id"], :name => "index_subreddits_on_created_by_id"
 
   create_table "users", :force => true do |t|
-    t.string   "username"
-    t.string   "password"
+    t.string   "username",                     :null => false
+    t.string   "password",                     :null => false
     t.string   "email"
-    t.integer  "link_karma"
-    t.integer  "comment_karma"
+    t.integer  "link_karma",    :default => 0
+    t.integer  "comment_karma", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -3,4 +3,4 @@ Ruby on Rails project to create a clone of Reddit.com, for personal understandin
 Requires:
 * HAML
 
-Configure config/database.yml, run `rake db:create` to create the database, and `take db:migrate` to create the tables. To view the site, run `rails server` to start the server, then browse to the given URL.
+Run `bundle install` to get the required gems. Configure config/database.yml, run `rake db:create` to create the database, and `rake db:migrate` to create the tables. To view the site, run `rails server` to start the server, then browse to the given URL.
