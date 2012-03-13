@@ -43,7 +43,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    #params[:password] = Digest::SHA2.hexdigest(params[:password])
+    params[:user][:password] = Digest::SHA256.hexdigest(params[:user][:password])
     @user = User.new(params[:user])
 
     respond_to do |format|
@@ -60,8 +60,8 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-    @user = User.find(params[:id])
-
+    @user = User.find_by_username(params[:id])
+    params[:user][:password] = Digest::SHA256.hexdigest(params[:user][:password])
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to @user, notice: 'User was successfully updated.' }

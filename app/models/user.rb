@@ -1,4 +1,4 @@
-require 'digest/sha2'
+require 'digest'
 
 class User < ActiveRecord::Base
   validates :username, :presence => true, :length => {:minimum => 3, :maximum => 32}
@@ -10,8 +10,7 @@ class User < ActiveRecord::Base
 
   def self.Authenticate(username, password)
     if user = User.find_by_username(username)
-    # if Digest::SHA2.hexdigest(password)= user.password
-      if password = user.password
+    if Digest::SHA256.hexdigest(password).eql? user.password
         user
       end
     end

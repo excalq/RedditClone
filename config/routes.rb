@@ -4,6 +4,7 @@ Redditclone::Application.routes.draw do
     get 'login' => :new
     post 'login' => :create
     delete 'login' => :delete
+    get 'logout' => :delete
   end
 
   controller :users do

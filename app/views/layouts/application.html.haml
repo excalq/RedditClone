@@ -56,6 +56,8 @@
         #user_bar
           - if session[:user_id]
             = link_to "Profile", users_path, :id => session[:user_id]
+            |
+            = link_to "Logout", "/logout"
           - else
             = link_to "Login", login_path
             or
