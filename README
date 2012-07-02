@@ -1,3 +1,15 @@
+## Fork Notes
+Excalq's fork of Chiggins/RedditClone. This fork aims to add functionality to what was started. It would be really nice to have a functional 
+rails clone of the reddit source code. 
+
+## Fork Usefulness Rating: Fork Usefulness Rating: 2/10 (Application is not yet functional)
+
+### Current Status:
+  * 2012-07-02: Readme updated to show fork info.
+  * 2012-07-01: Fork created, no new developments yet. 
+
+--------------
+
 Ruby on Rails project to create a clone of Reddit.com, for personal understanding of the Ruby on Rails framework.
 
 Requires:
