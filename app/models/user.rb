@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   end
 
   def self.Authenticate(username, password)
+    logger.error "#{username} #{password} #{Digest::SHA256.hexdigest(password)}"
     if user = User.find_by_username(username)
     if Digest::SHA256.hexdigest(password).eql? user.password
         user
